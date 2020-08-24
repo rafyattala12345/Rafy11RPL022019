@@ -23,8 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
-
-        pref = getSharedPreferences("Login", MODE_PRIVATE);
+        pref = getSharedPreferences("login", MODE_PRIVATE);
         usernameet = (EditText)findViewById(R.id.usernameet);
         passwordet = (EditText)findViewById(R.id.passwordet);
         loginbtn = (Button)findViewById(R.id.loginbtn);
@@ -37,10 +36,11 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this,"thankyou for login", Toast.LENGTH_SHORT).show();
 
                     editor = pref.edit();
-                    editor.putString("username ", usernameet.getText().toString());
+                    editor.putString("username", usernameet.getText().toString());
                     editor.putString("status", "login");
                     editor.apply();
 
+                    startActivity(new Intent(getApplicationContext(), MainMenu.class));
                     finish();
                 }
 
