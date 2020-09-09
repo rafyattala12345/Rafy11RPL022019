@@ -5,40 +5,49 @@
     android:layout_margin="10dp"
     android:elevation="10dp"
     app:cardElevation="10dp"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#F4F788">
+        android:background="#5E5E5E">
 
         <ImageView
+            android:padding="5dp"
             android:id="@+id/profileiv"
             android:src="@mipmap/ic_launcher"
-            android:layout_width="50dp"
-            android:layout_height="50dp"/>
+            android:layout_width="130dp"
+            android:layout_height="200dp"/>
 
         <LinearLayout
+            android:layout_margin="10dp"
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
+
             <TextView
-                android:padding="2dp"
-                android:id="@+id/nametv"
-                android:text="your name"
+                android:textSize="29dp"
+                android:textColor="#ffffff"
                 android:textStyle="bold"
+                android:text="Name Placeholder"
+                android:id="@+id/nametv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+
             <TextView
-                android:padding="2dp"
+                android:layout_marginTop="6dp"
+                android:textSize="20dp"
+                android:text="Desc Placeholder"
                 android:id="@+id/desctv"
-                android:text="desc about you"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"/>
+
         </LinearLayout>
 
     </LinearLayout>
