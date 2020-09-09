@@ -63,24 +63,18 @@ public class ListData extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
     }
-
     void addDataOnline(){
-        AndroidNetworking.get("https://api.themoviedb.org/3/movie/550?api_key=38cd105ce2f26e267e1c082f164a9535")
-                .setTag("test")
-                .setPriority(Priority.LOW)
+        AndroidNetworking.get("https://api.themoviedb.org/3/movie/popular")
+                .addQueryParameter("api_key", "38cd105ce2f26e267e1c082f164a9535")
+                .addQueryParameter("language", "en-US")
                 .build()
                 .getAsJSONObject(new JSONObjectRequestListener() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        // do anything with response
-                        Log.d("hasiljson", "onResponse: " + response.toString());
-                        //jika sudah berhasil debugm lanjutkan code dibawah ini
                         DataArraylist = new ArrayList<>();
                         model modelku;
                         try {
-                            Log.d("hasiljson", "onResponse: " + response.toString());
                             JSONArray jsonArray = response.getJSONArray("results");
-                            Log.d("hasiljson2", "onResponse: " + jsonArray.toString());
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 modelku = new model();
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
